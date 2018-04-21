@@ -1,8 +1,28 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#header-title.card {
+  border-radius: 0px !important;
+}
+
+.demo-card-wide.mdl-card {
+  /* width: 512px; */
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 250px;
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkegJVHcSPZwkhV4YEHiY9JgsbmzSS8WSKyXzH3R9DcYw2ZbdH') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+/* misc helper */
+.margin-t-55 {
+  margin-top: 55px !important;
 }
