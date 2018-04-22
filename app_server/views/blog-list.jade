@@ -4,28 +4,35 @@ block content
   #header-title.card.w-100.bg-dark
     .card-body 
       h3.text-light This is my title header
-  .blog-container.d-flex.flex-wrap.p-1
-    .row
-      .col-8
-        .row
-          .col-6
-            .demo-card-wide.mdl-card.mdl-shadow--2dp.w-100
-              .mdl-card__title
-                h2.mdl-card__title-text Welcome
-              .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-              .mdl-card__actions.mdl-card--border
-                .a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
-          .col-6
-            .demo-card-wide.mdl-card.mdl-shadow--2dp.w-100
-              .mdl-card__title
-                h2.mdl-card__title-text Welcome
-              .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-              .mdl-card__actions.mdl-card--border
-                .a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
-      .col-4
-        
-        
-
+  // Blog container
+  .blog-container.d-flex.flex-wrap.justify-content-center.p-1
+    .blog-cards-container.mr-auto.p-1
+      // Blog card
+      .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
+        .mdl-card__title(style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkegJVHcSPZwkhV4YEHiY9JgsbmzSS8WSKyXzH3R9DcYw2ZbdH') center/cover;")
+          h2.mdl-card__title-text Welcome
+        .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+        .mdl-card__actions.mdl-card--border
+          .a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
+      // End: Blog card 
+      .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
+        .mdl-card__title(style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkegJVHcSPZwkhV4YEHiY9JgsbmzSS8WSKyXzH3R9DcYw2ZbdH') center/cover;")
+          h2.mdl-card__title-text Welcome
+        .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+        .mdl-card__actions.mdl-card--border
+          .a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
+      .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
+        .mdl-card__title(style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkegJVHcSPZwkhV4YEHiY9JgsbmzSS8WSKyXzH3R9DcYw2ZbdH') center/cover;")
+          h2.mdl-card__title-text Welcome
+        .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+        .mdl-card__actions.mdl-card--border
+          .a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
+    // End: Blog container
+    
+    // Sidebar container  
+    .sidebar-container.p-1(style="height: 100%;")
+    
+    // End Sidebar container
     
     
   

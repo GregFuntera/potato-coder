@@ -6,23 +6,37 @@ a {
   color: #00B7FF;
 }
 
+
+/* blog list section */
 #header-title.card {
   border-radius: 0px !important;
 }
 
-.demo-card-wide.mdl-card {
-  /* width: 512px; */
-}
-.demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 250px;
-  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkegJVHcSPZwkhV4YEHiY9JgsbmzSS8WSKyXzH3R9DcYw2ZbdH') center / cover;
-}
-.demo-card-wide > .mdl-card__menu {
-  color: #fff;
+.blog-cards-container {
+  width: 820px;
 }
 
-/* misc helper */
-.margin-t-55 {
-  margin-top: 55px !important;
+.sidebar-container {
+  width: 600px;
+}
+
+.blog-card > .mdl-card__title {
+  color: #fff;
+  height: 250px;
+}
+
+.blog-card > .mdl-card__menu {
+  color: #fff;
+}
+/* End: blog-list */
+
+/* media queries */
+/* blog list */
+@media only screen and (max-width: 1200px) {
+  .blog-cards-container {
+    width: 100% !important;
+  }
+  .sidebar-container {
+    width: 100% !important;
+  }
 }
