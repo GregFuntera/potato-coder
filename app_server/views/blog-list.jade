@@ -27,11 +27,26 @@ block content
         .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
         .mdl-card__actions.mdl-card--border
           .a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
-    // End: Blog container
-    
+      // End: Blog container
     // Sidebar container  
     .sidebar-container.p-1(style="height: 100%;")
-    
+      .author-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
+        .mdl-card__title.mdl-card--expand
+          h2.mdl-card__title-text Author
+        .mdl-card__supporting-text.text-center 
+          p.m-0 Code 
+            i.material-icons code
+          p.m-0 
+            i.material-icons group
+            span Share
+          p.m-0 Repeat
+            i.material-icons autorenew
+      .archive-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
+        .mdl-card__title
+          h4 Archives
+        .mdl-card__actions.mdl-card--border
+          p 2018
+          
     // End Sidebar container
     
     

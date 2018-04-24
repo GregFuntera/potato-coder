@@ -20,6 +20,15 @@ a {
   width: 600px;
 }
 
+.author-card {
+  height: 350px;
+}
+
+.author-card > .mdl-card__title {
+  background: #ccc;
+  color: #fff;
+}
+
 .blog-card > .mdl-card__title {
   color: #fff;
   height: 250px;
