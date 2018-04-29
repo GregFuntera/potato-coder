@@ -53,7 +53,9 @@ a {
 }
 /* End: blog-list */
 
-
+.blog-view-card {
+  width: 820px;
+}
 /* media queries */
 /* blog list */
 @media only screen and (max-width: 1200px) {
@@ -62,5 +64,9 @@ a {
   }
   .sidebar-container {
     width: 100% !important;
+  }
+  .blog-view-card {
+    width: 100% !important;
+    height: 100% !important;
   }
 }
