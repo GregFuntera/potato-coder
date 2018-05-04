@@ -51,6 +51,13 @@ a {
 .blog-card > .mdl-card__menu {
   color: #fff;
 }
+
+.blog-summmary {
+  line-height: 1.6em !important;
+  overflow: hidden !important;
+  height: 150px;
+  text-align: justify;
+}
 /* End: blog-list */
 
 .blog-view-card {
