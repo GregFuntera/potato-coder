@@ -8,28 +8,15 @@ block content
   // Blog container
   .blog-container.d-flex.flex-wrap.justify-content-center.p-1
     .blog-cards-container.mr-auto.p-1
-      // Blog card
-      .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
-        .mdl-card__title(style="background: url('http://www.lirent.net/wp-content/uploads/2014/10/Android-Lollipop-wallpapers-p-800x500.png') center/cover;")
-          h2.mdl-card__title-text Welcome
-        .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-        .mdl-card__actions.mdl-card--border
-          a(href="/blog/blogid").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
+      each topic in topics
+        // Blog card
+        .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
+          .mdl-card__title(style="background: url(#{topic.featured_photo}) center/cover;")
+            h2.mdl-card__title-text #{topic.title}
+          .mdl-card__supporting-text #{topic.body}
+          .mdl-card__actions.mdl-card--border
+            a(href="/blog/blogid").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
       // End: Blog card 
-      .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
-        .mdl-card__title(style="background: url('http://www.lirent.net/wp-content/uploads/2014/10/Android-Lollipop-wallpapers-p-800x500.png') center/cover;")
-          h2.mdl-card__title-text Welcome
-        .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-        .mdl-card__actions.mdl-card--border
-          a(href="/blog/blogid").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
-      //
-      .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
-        .mdl-card__title(style="background: url('http://www.lirent.net/wp-content/uploads/2014/10/Android-Lollipop-wallpapers-p-800x500.png') center/cover;")
-          h2.mdl-card__title-text Welcome
-        .mdl-card__supporting-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-        .mdl-card__actions.mdl-card--border
-          a(href="/blog/blogid").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
-      //
     // End: Blog container
     // Sidebar container  
     .sidebar-container.p-1
