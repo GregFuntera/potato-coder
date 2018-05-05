@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var blogs = require('../controllers/blogs')
+var blogs = require('../controllers/blog')
 
 /* GET home page. */
 router.get('/', blogs.blogList);
