@@ -70,6 +70,40 @@ module.exports.createBlog = function(req, res) {
     });
   }
 }
+// Update a blog
+module.exports.updateBlog = function(req, res) {
+  var blogid = req.params.blogid;
+  if(!blogid) {
+    sendJSONResponse(res, 404, {
+      message: 'blog id not found'
+    });
+  } else {
+    blog
+      .findById(blogid)
+      .exec(function(error, blog) {
+        if(!blog) {
+          sendJSONResponse(res, 404, {
+            message: 'blog id not found'
+          });
+        } else if(error) {
+          sendJSONResponse(res, 400, error);
+        } else {
+          blog.title = req.body.title;
+          blog.body = req.body.body;
+          blog.featured_photo = req.body.featured_photo;
+          blog.summary = req.body.summary;
+          //
+          blog.save(function(error, blog) {
+            if(error) {
+              sendJSONResponse(res, 400, error);
+            } else {
+              sendJSONResponse(res, 200, blog);
+            }
+          });
+        }
+      });
+  }
+}
 // Delete a blog
 module.exports.deleteBlog = function(req, res) {
   var blogid = req.params.blogid;

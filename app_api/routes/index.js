@@ -8,6 +8,8 @@ router.get('/blog', blogCtrl.getBlogs);
 router.get('/blog/:blogid', blogCtrl.getBlog);
 // Post a new Blog
 router.post('/blog', blogCtrl.createBlog);
+// Update a blog
+router.put('/blog/:blogid', blogCtrl.updateBlog);
 // Delete a Blog
 router.delete('/blog/:blogid', blogCtrl.deleteBlog);
 
