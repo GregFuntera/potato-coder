@@ -8,6 +8,7 @@ block content
   // Blog container
   .blog-container.d-flex.flex-wrap.justify-content-center.p-1
     .blog-cards-container.mr-auto.p-1
+      h1 #{message}
       each topic in topics
         // Blog card
         .blog-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
@@ -15,7 +16,7 @@ block content
             h2.mdl-card__title-text #{topic.title}
           .mdl-card__supporting-text.w-100.blog-summmary #{topic.summary}
           .mdl-card__actions.mdl-card--border
-            a(href="/blog/blogid").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
+            a(href="/blog/#{topic._id}").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Read More
       // End: Blog card 
     // End: Blog container
     // Sidebar container  
