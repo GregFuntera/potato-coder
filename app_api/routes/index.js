@@ -1,20 +1,17 @@
 var express = require('express');
-var cors = require('cors');
 var router = express.Router();
 var blogCtrl = require('../controllers/blog');
 var app = express();
 
-app.use(cors());
-
 // Get list of Blogs
-router.get('/blog', cors(), blogCtrl.getBlogs);
+router.get('/blog', blogCtrl.getBlogs);
 // Get a specific Blog
-router.get('/blog/:blogid', cors(), blogCtrl.getBlog);
+router.get('/blog/:blogid', blogCtrl.getBlog);
 // Post a new Blog
-router.post('/blog', cors(), blogCtrl.createBlog);
+router.post('/blog', blogCtrl.createBlog);
 // Update a blog
-router.put('/blog/:blogid', cors(), blogCtrl.updateBlog);
+router.put('/blog/:blogid', blogCtrl.updateBlog);
 // Delete a Blog
-router.delete('/blog/:blogid', cors(), blogCtrl.deleteBlog);
+router.delete('/blog/:blogid', blogCtrl.deleteBlog);
 
 module.exports = router;
