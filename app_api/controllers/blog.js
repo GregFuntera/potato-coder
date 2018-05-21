@@ -9,16 +9,20 @@ var sendJSONResponse = function(res, status, content) {
 
 // Get List of blogs
 module.exports.getBlogs = function(req, res) {
+  var is_published = req.query.is_published;
+  if(is_published === undefined) {
+   is_published = true;
+  }
   blog
-    .find()
-    .select('title summary featured_photo')
-    .exec(function(error, blogs) {
-      if(error) {
-        sendJSONResponse(res, 400, error);
-      } else {
-        sendJSONResponse(res, 200, blogs);
-      }
-    });
+  .find({is_published: is_published})
+  .select('title summary featured_photo')
+  .exec(function(error, blogs) {
+    if(error) {
+      sendJSONResponse(res, 400, error);
+    } else {
+      sendJSONResponse(res, 200, blogs);
+    }
+  });
 }
 // Get Blog by id
 module.exports.getBlog = function(req, res) {
@@ -50,6 +54,7 @@ module.exports.createBlog = function(req, res) {
       body = req.body.body,
       featured_photo = req.body.featured_photo,
       summary = req.body.summary;
+      is_published = req.body.is_published;
 
   if(!title && !body && !featured_photo && !summary) {
     sendJSONResponse(res, 404, {
@@ -60,7 +65,8 @@ module.exports.createBlog = function(req, res) {
       title: title,
       body: body,
       featured_photo: featured_photo,
-      summary: summary
+      summary: summary,
+      is_published: is_published
     }, function(error, blog) {
       if(error) {
          sendJSONResponse(res, 400, error);
@@ -92,6 +98,7 @@ module.exports.updateBlog = function(req, res) {
           blog.body = req.body.body;
           blog.featured_photo = req.body.featured_photo;
           blog.summary = req.body.summary;
+          blog.is_published = req.body.is_published;
           //
           blog.save(function(error, blog) {
             if(error) {
