@@ -13,5 +13,7 @@ router.post('/blog', blogCtrl.createBlog);
 router.put('/blog/:blogid', blogCtrl.updateBlog);
 // Delete a Blog
 router.delete('/blog/:blogid', blogCtrl.deleteBlog);
+// Get archive list
+router.get('/archives', blogCtrl.getBlogsArchive)
 
 module.exports = router;

@@ -134,3 +134,35 @@ module.exports.deleteBlog = function(req, res) {
     });
   }
 }
+// Get Blog Archive List
+module.exports.getBlogsArchive = function(req, res) {
+  blog
+    .aggregate(
+      [ 
+        {
+          $match: { is_published: true }
+        },
+        { 
+          $group: {
+            _id: { $year: "$created_at" },
+            blogs: {
+              $push: {
+                _id: "$_id",  
+                title: "$title",
+                created_at: "$created_at",
+              },
+            },
+          },
+        },
+      ]
+    )
+    .sort({ _id: -1})
+    .exec(function(error, archives) {
+      if(error) {
+        sendJSONResponse(res, 400, error);
+      } else {
+        sendJSONResponse(res, 200, archives);
+      }
+  })
+    
+}

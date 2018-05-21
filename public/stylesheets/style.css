@@ -64,6 +64,13 @@ a {
   width: 820px;
 }
 
+/* blog view errors */
+.error-container {
+  height: 800px;
+  margin: 20px;
+  text-align: center;
+}
+
 /* media queries */
 /* blog list */
 @media only screen and (max-width: 1200px) {
