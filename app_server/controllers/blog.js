@@ -25,17 +25,23 @@ module.exports.blogList = function(req, res) {
 
 }
 
-var renderBlogList = function(req, res, responseBody) {
+
+var renderBlogList = function(req, res, responseBody, archives) {
   var message;
   
   message = createBlogListMessage(responseBody).message;
   responseBody = createBlogListMessage(responseBody).response;
-
-  res.render('blog-list', {
-    topics: responseBody,
-    message: message,
-  });
+  
+  var data = {
+    view: 'blog-list',
+    response: {
+      topics: responseBody,
+      message: message,
+    }
+  }
+  getBlogArchives(req, res, data);
 };
+
 
 var createBlogListMessage = function(responseBody) {
   var message, response = responseBody;
@@ -79,12 +85,16 @@ var getBlogView = function(req, res, callback) {
 }
 
 var renderBlogView = function(req, res, responseBody) {
-  res.render('blog-view', {
-    title: responseBody.title,
-    body: responseBody.body,
-    featured_photo: responseBody.featured_photo,
-    created_at: moment(responseBody.created_at).format("MMM Do YY"),
-  });
+  var data = {
+    view: 'blog-view',
+    response: {
+      title: responseBody.title,
+      body: responseBody.body,
+      featured_photo: responseBody.featured_photo,
+      created_at: moment(responseBody.created_at).format("MMM Do YY"),
+    }
+  };
+  getBlogArchives(req, res, data);
 }
 
 var _showError = function(req, res, status) {
@@ -103,4 +113,25 @@ var _showError = function(req, res, status) {
     title: title,
     content: content
   });
+}
+
+// Getting Archives 
+var getBlogArchives = function(req, res, data) {
+  var requestOptions, path;
+  path = 'api/archives';
+  
+  requestOptions = {
+    url: apiOptions.server + path,
+    method: 'GET',
+    json: {},
+  };
+
+  request(requestOptions, function(err, response, archives) {
+    data.response.archives = archives;
+    renderView(req, res, data);
+  });
+}
+
+var renderView = function(req, res, data) {
+  res.render(data.view, data.response);
 }
