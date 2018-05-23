@@ -1,15 +1,39 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #22262a !important;
 }
 
-a {
+/* a {
   color: #00B7FF;
+} */
+
+nav {
+  height: 75px;
 }
+
+/* Color Themes */
+.theme-dark {
+  background: #161619 !important;
+}
+
+.theme-gray {
+  background: #22262a !important;
+}
+
+#header-title .card-body {
+  background: url('/images/header_banner.jpg') center/cover;
+  height: 300px;
+}
+#header-title .card-body h3{
+  line-height: 2;
+}
+
 
 
 /* blog list section */
 #header-title.card {
   border-radius: 0px !important;
+
 }
 
 .blog-cards-container {
@@ -74,6 +98,11 @@ a {
 /* media queries */
 /* blog list */
 @media only screen and (max-width: 1200px) {
+
+  #header-title .card-body h3{
+    font-size: 24px;
+  }
+
   .blog-cards-container {
     width: 100% !important;
   }
