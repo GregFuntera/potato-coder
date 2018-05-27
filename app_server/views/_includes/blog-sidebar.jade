@@ -1,19 +1,16 @@
 mixin archives(archives)
-  //- each archive in archives
-  //-   p #{archive._id}
-  //-   each blog in archive.blogs
-  //-     p #{blog.title}
   .author-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
     .mdl-card__title.mdl-card--expand
-      h2.mdl-card__title-text Author
-    .mdl-card__supporting-text.text-center 
-      p.m-0 Code 
-        i.material-icons code
-      p.m-0 
-        i.material-icons group
-        span Share
-      p.m-0 Repeat
-        i.material-icons autorenew
+      .profile-avatar
+        h2 G
+    .mdl-card__supporting-text.text-center.w-100.profile-quote
+      i.material-icons directions_walk
+      i.material-icons directions_bike
+      i.material-icons flight
+      h4.quote-profile Sharing my learning journey
+      i.material-icons local_dining
+      i.material-icons hotel
+      i.material-icons code
   .archive-card.mdl-card.mdl-shadow--2dp.w-100.mt-2
     .mdl-card__title
       h4 Archives
@@ -28,7 +25,7 @@ mixin archives(archives)
                 i.material-icons today
           .collapse(id="#{archive._id}").show(aria-labelledby="headingOne", data-parent="#accordion")
             .card-body
-              ul
+              ul.archive-list-title
                 each blog in archive.blogs
                   li 
                     a(href='/blog/#{blog._id}') #{blog.title}

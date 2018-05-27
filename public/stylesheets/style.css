@@ -1,11 +1,12 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: #22262a !important;
+  /* #22262a !important */
 }
 
-/* a {
+a {
   color: #00B7FF;
-} */
+}
 
 nav {
   height: 75px;
@@ -20,6 +21,14 @@ nav {
   background: #22262a !important;
 }
 
+.blog-title {
+  border: 1px solid;
+  padding: 12px;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  font-size: 24px !important;
+}
+
 #header-title .card-body {
   background: url('/images/header_banner.jpg') center/cover;
   height: 300px;
@@ -28,26 +37,60 @@ nav {
   line-height: 2;
 }
 
+/* Profile Card */
+.profile-avatar {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background: #16161a;
+  text-align: center;
+  margin: auto;
+}
+
+.profile-avatar h2 {
+  margin: 36px;
+}
+
+.profile-quote h4 {
+  width: 80%;
+  font-weight: 100;
+  margin:auto;
+}
+
+.profile-quote i {
+  margin: 5px;
+  font-size: 30px;
+}
 
 
 /* blog list section */
 #header-title.card {
   border-radius: 0px !important;
-
 }
 
-.blog-cards-container {
-  width: 820px;
+.blog-container.row {
+  max-width: 1280px;
+  margin: auto;
 }
 
-.sidebar-container {
-  width: 600px;
+.archive-card {
+  max-width: 535px;
+  margin: auto;
+  background: #16161b !important;
+}
+
+.archive-card h4 {
+  color: #fff !important;
 }
 
 .archive-card #archive-year {
   font-size: 24px;
   width: 100%;
   text-align: right;
+}
+
+.card.archive-cards {
+  background: #23272b !important
 }
 
 .archive-card i {
@@ -58,12 +101,20 @@ nav {
   margin-left: 10px;
 }
 
+.archive-list-title {
+  list-style: none;
+  text-align: right;
+  font-size: 18px;
+}
+
 .author-card {
   height: 350px;
+  max-width: 535px;
+  margin: auto;
 }
 
 .author-card > .mdl-card__title {
-  background: #ccc;
+  background: #23272b;;
   color: #fff;
 }
 
@@ -113,4 +164,5 @@ nav {
     width: 100% !important;
     height: 100% !important;
   }
+
 }
