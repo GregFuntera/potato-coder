@@ -27,6 +27,8 @@ mixin archives(archives)
             .card-body
               ul.archive-list-title.p-0
                 each blog in archive.blogs
-                  li 
-                    a(href='/blog/#{blog._id}') #{blog.title}
+                  li.pb-3 
+                    a(href='/blog/#{blog._id}') 
+                      i.material-icons label_important 
+                      span.archive-title #{blog.title}
         // End: Accordion Content
