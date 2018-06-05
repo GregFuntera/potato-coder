@@ -145,6 +145,20 @@ nav {
 }
 /* End: blog-list */
 
+
+.blog-view-title-container h4 {
+  font-size: 32px;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.blog-view-title-container p {
+  font-size: 24px;
+  margin: 10px;
+  font-weight: 100;
+}
+
 /* blog view errors */
 .error-container {
   height: 800px;
@@ -180,19 +194,6 @@ nav {
   .blog-view-card {
     width: 100% !important;
     height: 100% !important;
-  }
-
-  .blog-view-title-container h4 {
-    font-size: 32px;
-    padding: 0;
-    margin: 0;
-    margin-top: 20px;
-  }
-
-  .blog-view-title-container p {
-    font-size: 24px;
-    margin: 10px;
-    font-weight: 100;
   }
 
   .background-particle {
