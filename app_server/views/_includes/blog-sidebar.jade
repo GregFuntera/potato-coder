@@ -25,7 +25,7 @@ mixin archives(archives)
                 i.material-icons today
           .collapse(id="#{archive._id}").show(aria-labelledby="headingOne", data-parent="#accordion")
             .card-body
-              ul.archive-list-title
+              ul.archive-list-title.p-0
                 each blog in archive.blogs
                   li 
                     a(href='/blog/#{blog._id}') #{blog.title}
