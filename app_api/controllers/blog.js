@@ -15,7 +15,7 @@ module.exports.getBlogs = function(req, res) {
   }
   blog
   .find({is_published: is_published})
-  .select('title summary featured_photo')
+  .select('title summary featured_photo youtube_stats')
   .exec(function(error, blogs) {
     if(error) {
       sendJSONResponse(res, 400, error);
@@ -55,6 +55,7 @@ module.exports.createBlog = function(req, res) {
       featured_photo = req.body.featured_photo,
       summary = req.body.summary;
       is_published = req.body.is_published;
+      youtube_stats = req.body.youtube_stats;
 
   if(!title && !body && !featured_photo && !summary) {
     sendJSONResponse(res, 404, {
@@ -66,6 +67,7 @@ module.exports.createBlog = function(req, res) {
       body: body,
       featured_photo: featured_photo,
       summary: summary,
+      youtube_stats: youtube_stats,
       is_published: is_published
     }, function(error, blog) {
       if(error) {
@@ -98,6 +100,7 @@ module.exports.updateBlog = function(req, res) {
           blog.body = req.body.body;
           blog.featured_photo = req.body.featured_photo;
           blog.summary = req.body.summary;
+          blog.youtube_stats = req.body.youtube_stats;
           blog.is_published = req.body.is_published;
           //
           blog.save(function(error, blog) {
