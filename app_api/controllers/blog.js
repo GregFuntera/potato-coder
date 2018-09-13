@@ -15,7 +15,8 @@ module.exports.getBlogs = function(req, res) {
   }
   blog
   .find({is_published: is_published})
-  .select('title summary featured_photo youtube_stats')
+  .select('title summary featured_photo created_at youtube_stats')
+  .sort([['created_at', -1]])
   .exec(function(error, blogs) {
     if(error) {
       sendJSONResponse(res, 400, error);
@@ -145,18 +146,21 @@ module.exports.getBlogsArchive = function(req, res) {
         {
           $match: { is_published: true }
         },
-        { 
+        {
+          $sort: { created_at: -1 }
+        },
+        {
           $group: {
-            _id: { $year: "$created_at" },
-            blogs: {
-              $push: {
+          _id: { $year: "$created_at" },
+          blogs: {
+            $push: {
                 _id: "$_id",  
                 title: "$title",
                 created_at: "$created_at",
               },
             },
-          },
-        },
+          }, 
+        }
       ]
     )
     .sort({ _id: -1})
